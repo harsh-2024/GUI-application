@@ -19,12 +19,12 @@ def button_clicked():
             value = float(input_text)
             km_result = value*1.609
             result_label = Label(text=f"{value} miles equals {km_result} Kilometers")
-            result_label.place(x=90, y=100)
+            result_label.place(x=70, y=100)
 
 
 
 my_button = Button(text="Convert", command=button_clicked)
-my_button.place(x=150, y=70)
+my_button.place(x=150, y=50)
 
 
 
