@@ -22,12 +22,19 @@ my_label = Label(text="Graphical User Interface",font=("Arial", 24, "bold"))
 my_label.pack(side="top")
 
 
+input = Entry()
+input.pack()
+input_text = input.get()
+
+
+
 def button_clicked():
-    my_label.config(text="Button has clicked")   # pack method for representing it to the screen.
+    my_label.config(text=input_text)   # pack method for representing it to the screen.
 
 
 button = Button(text="Click Me", command=button_clicked)
-button.pack(side="bottom")
+button.pack()
+
 
 
 
