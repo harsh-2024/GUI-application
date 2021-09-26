@@ -24,12 +24,11 @@ my_label.pack(side="top")
 
 input = Entry()
 input.pack()
-input_text = input.get()
-
 
 
 def button_clicked():
-    my_label.config(text=input_text)   # pack method for representing it to the screen.
+    input_text = input.get()
+    my_label.config(text=input_text.upper())    # pack method for representing it to the screen.
 
 
 button = Button(text="Click Me", command=button_clicked)
