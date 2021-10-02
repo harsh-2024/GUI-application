@@ -9,8 +9,6 @@ window.config(padx=40, pady=40)
 my_label = Label(text="Enter the distance in Miles : ")
 my_label.place(x=0, y=0)
 
-
-
 input = Entry()
 input.place(x=201)
 
@@ -22,21 +20,8 @@ def button_clicked():
             result_label.place(x=70, y=100)
 
 
-
 my_button = Button(text="Convert", command=button_clicked)
 my_button.place(x=150, y=50)
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.mainloop()    # for holding window
 
