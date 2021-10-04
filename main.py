@@ -2,7 +2,7 @@ from tkinter import *
 
 window = Tk()
 
-window.minsize(width=400, height=300)  # minsize method
+window.minsize(width=600, height=400)  # minsize method
 window.title("Convertor GUI Program")  # title method
 window.config(padx=40, pady=40)
 
@@ -17,13 +17,16 @@ def button_clicked():
             value = float(input_text)
             km_result = value*1.609
             result_label = Label(text=f"{value} miles equals {km_result} Kilometers")
-            result_label.place(x=70, y=100)
+            result_label.place(x=250, y=30)
 
 
-my_button = Button(text="Convert", command=button_clicked)
-my_button.place(x=150, y=50)
+my_button = Button(text="Convert to Kilometers", command=button_clicked)
+my_button.place(x=120, y=30)
+
+
 
 window.mainloop()    # for holding window
+
 
 
 
