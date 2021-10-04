@@ -1,6 +1,6 @@
 from tkinter import *
 
-window = Tk()    
+window = Tk()
 
 window.minsize(width=400, height=300)  # minsize method
 window.title("Convertor GUI Program")  # title method
