@@ -23,8 +23,6 @@ my_label3_2.place(x=0, y=180)
 
 
 
-
-
 input1 = Entry()
 input1.place(x=201)
 
