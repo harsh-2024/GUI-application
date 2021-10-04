@@ -31,6 +31,7 @@ input2.place(x=201,  y=70)
 
 input3_1 = Entry()
 input3_1.place(x=201, y=160)
+
 input3_2 = Entry()
 input3_2.place(x=201, y=180)
 
@@ -41,12 +42,21 @@ def fun1():
             result_label = Label(text=f"{value} miles equals {km_result} Kilometers")
             result_label.place(x=250, y=30)
 
+def fun2():
+            input_text = input2.get()
+            value = int(input_text)
+            rupee = value*74.27
+            result_label = Label(text=f"{value} equals {rupee} USD")
+            result_label.place(x=250, y=100)
+
+
+
 def fun3():
             input_text_1 = input3_1.get()
             input_text_2 = input3_2.get()
             value1 = float(input_text_1)
             value2 = float(input_text_2)
-            bmi = value1/(value2*value2)
+            bmi = round(value1/(value2*value2), 4)
             result_label = Label(text=f"Your BMI is {bmi} CM/KG^2")
             result_label.place(x=210, y=210)
 
@@ -56,7 +66,7 @@ def fun3():
 my_button1 = Button(text="Convert to Kilometers", command=fun1)
 my_button1.place(x=120, y=30)
 
-my_button2 = Button(text="Convert to rupees : ")
+my_button2 = Button(text="Convert to rupees : ", command=fun2)
 my_button2.place(x=120, y=100)
 
 my_button3 = Button(text="Calculate : ", command=fun3)
