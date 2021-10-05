@@ -67,6 +67,24 @@ def currency_tab_labels():
     input2.place(x=201,y=40)
     cur_calc_button = Button(currency_frame, text="Convert to INR", command=cur_calc).place(x=120,y=100)
 
+def len_calc():
+    input_text = input3.get()
+    value = float(input_text)
+    km_result = value*2.54
+    result_label = Label(length_frame,text=f"{value} Inches equals {km_result} Centimeters")
+    result_label.place(x=270, y=100)
+
+
+
+def length_tab_labels():
+    my_label = Label(length_frame, text="Enter the length in Inches").place(x=40, y=40)
+    global input3
+    input3 = Entry(length_frame)
+    input3.place(x=201,y=40)
+    cur_calc_button = Button(length_frame, text="Convert to Centimeters", command=len_calc).place(x=120,y=100)
+
+
+
 
 
 
@@ -87,6 +105,7 @@ def currency_frame_fun():
 def length_frame_fun():
     hide_frames()
     length_frame.pack(fill="both", expand=1)
+    length_tab_labels()
 def weight_frame_fun():
     hide_frames()
     weight_frame.pack(fill="both", expand=1)
