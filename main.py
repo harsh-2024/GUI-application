@@ -50,7 +50,24 @@ def distance_tab_labels():
     global input1
     input1 = Entry(distance_frame)
     input1.place(x=201,y=40)
-    dist_calc_button = Button(distance_frame, text="Convert", command=dist_calc).place(x=120,y=100)
+    dist_calc_button = Button(distance_frame, text="Convert to Kilometers", command=dist_calc).place(x=120,y=100)
+
+def cur_calc():
+    input_text = input2.get()
+    value = float(input_text)
+    km_result = value*74.692
+    result_label = Label(currency_frame,text=f"{value} USD equals {km_result} INR")
+    result_label.place(x=250, y=100)
+
+
+def currency_tab_labels():
+    my_label = Label(currency_frame, text="Enter the amount in USD").place(x=40, y=40)
+    global input2
+    input2 = Entry(currency_frame)
+    input2.place(x=201,y=40)
+    cur_calc_button = Button(currency_frame, text="Convert to INR", command=cur_calc).place(x=120,y=100)
+
+
 
 
 
@@ -65,6 +82,8 @@ def distance_frame_fun():
 def currency_frame_fun():
     hide_frames()
     currency_frame.pack(fill="both", expand=1)
+    currency_tab_labels()
+
 def length_frame_fun():
     hide_frames()
     length_frame.pack(fill="both", expand=1)
