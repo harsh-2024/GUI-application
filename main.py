@@ -3,11 +3,11 @@ from tkinter import *
 
 window = Tk()
 
-def delete():
-    if active1 == True:
-        info_label.pack_forget()
-    if active2 == True:
-        ver_label.pack_forget()
+# def delete():
+#     if active1 == True:
+#         info_label.destroy()
+#     if active2 == True:
+#         ver_label.destroy()
 
 
 
@@ -17,50 +17,98 @@ def menu_callback():
 def submenu_callback():
     print("I'm in the submenu callback!")
 
-def info():
-     global info_label
-     global active1
-     active1 = True
-     info_label = Label(text="Name: Harsh Tripathi ")
-     info_label.pack()
 
-def ver():
-    global ver_label
-    global active2
-    active2 = True
-    ver_label = Label(text="GUI Version : 2021.10.166")
-    ver_label.pack()
+# def info():
+#      global info_label
+#      global active1
+#      active1 = True
+#      info_label = Label(text="Name: Harsh Tripathi ")
+#      info_label.pack()
+#
+# def ver():
+#     global ver_label
+#     global active2
+#     active2 = True
+#     ver_label = Label(text="GUI Version : 2021.10.166")
+#     ver_label.pack()
+def hide_frames():
+    distance_frame.pack_forget()
+    currency_frame.pack_forget()
+    length_frame.pack_forget()
+    weight_frame.pack_forget()
+
+
+def dist_calc():
+    input_text = input1.get()
+    value = float(input_text)
+    km_result = value*1.609
+    result_label = Label(distance_frame,text=f"{value} miles equals {km_result} Kilometers")
+    result_label.place(x=250, y=100)
+
+def distance_tab_labels():
+    my_label = Label(distance_frame, text="Enter the distance in Miles").place(x=40, y=40)
+    global input1
+    input1 = Entry(distance_frame)
+    input1.place(x=201,y=40)
+    dist_calc_button = Button(distance_frame, text="Convert", command=dist_calc).place(x=120,y=100)
+
+
+
+
+
+
+def distance_frame_fun():
+    hide_frames()
+    distance_frame.pack(fill="both", expand=1)
+    distance_tab_labels()
+
+def currency_frame_fun():
+    hide_frames()
+    currency_frame.pack(fill="both", expand=1)
+def length_frame_fun():
+    hide_frames()
+    length_frame.pack(fill="both", expand=1)
+def weight_frame_fun():
+    hide_frames()
+    weight_frame.pack(fill="both", expand=1)
+
+
 
 
 window.minsize(width=600, height=400)    # minsize method
 window.title("Convertor GUI Program")  # title method
-window.config(padx=40, pady=40)
 
 
 menu_widget = tkinter.Menu(window)
 submenu_widget = tkinter.Menu(menu_widget, tearoff=False)
-submenu_widget.add_command(label="Distance", command=submenu_callback)
-submenu_widget.add_command(label="Currency", command=submenu_callback)
-submenu_widget.add_command(label="Length", command=submenu_callback)
-submenu_widget.add_command(label="Weight", command=submenu_callback)
+submenu_widget.add_command(label="Distance", command=distance_frame_fun)
+submenu_widget.add_command(label="Currency", command=currency_frame_fun)
+submenu_widget.add_command(label="Length", command=length_frame_fun)
+submenu_widget.add_command(label="Weight", command=weight_frame_fun)
 
 
 
 menu_widget.add_cascade(label="Conversion", menu=submenu_widget)
 menu_widget.add_command(label="Factors", command=menu_callback)
-menu_widget.add_command(label="GUI Version", command=ver)
-menu_widget.add_command(label="Developer Info", command=info)
+menu_widget.add_command(label="GUI Version", command=menu_callback)
+menu_widget.add_command(label="Developer Info",command=menu_callback)
+
+
 
 window.config(menu=menu_widget)
 
+distance_frame = Frame(width=600, height=400, bg="red")
+currency_frame = Frame(width=600, height=400, bg="blue")
+length_frame= Frame(width=600, height=400, bg="purple")
+weight_frame = Frame(width=600, height=400,)
 
 
 window.minsize(width=600, height=400)  # minsize method
 window.title("Convertor GUI Program")  # title method
-window.config(padx=40, pady=40)
 
-delete_button = Button(text="Delete the text", command=delete)
-delete_button.place(x=450, y=330)
+
+# delete_button = Button(text="Delete the text", command=delete)
+# delete_button.place(x=450, y=330)
 
 
 
@@ -93,7 +141,7 @@ delete_button.place(x=450, y=330)
 # input3_2 = Entry()
 # input3_2.place(x=201, y=180)
 #
-# def fun1():
+# def distance():
 #             input_text = input1.get()
 #             value = float(input_text)
 #             km_result = value*1.609
