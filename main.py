@@ -83,6 +83,22 @@ def length_tab_labels():
     input3.place(x=201,y=40)
     cur_calc_button = Button(length_frame, text="Convert to Centimeters", command=len_calc).place(x=120,y=100)
 
+def wt_calc():
+    input_text = input4.get()
+    value = float(input_text)
+    km_result = value*0.453
+    result_label = Label(weight_frame,text=f"{value} Pound equals {km_result} Kilograms")
+    result_label.place(x=270, y=100)
+
+
+
+def weight_tab_labels():
+    my_label = Label(weight_frame, text="Enter the weight in Pound").place(x=40, y=40)
+    global input4
+    input4 = Entry(weight_frame)
+    input4.place(x=201,y=40)
+    cur_calc_button = Button(weight_frame, text="Convert to Kilogram", command=wt_calc).place(x=120,y=100)
+
 
 
 
@@ -109,6 +125,7 @@ def length_frame_fun():
 def weight_frame_fun():
     hide_frames()
     weight_frame.pack(fill="both", expand=1)
+    weight_tab_labels()
 
 
 
