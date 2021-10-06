@@ -118,9 +118,6 @@ def dev_frame_fun():
     dev_tab_labels()
 
 
-
-
-
 window.minsize(width=600, height=400)    # minsize method
 window.title("Convertor GUI Program")  # title method
 
@@ -146,15 +143,11 @@ currency_frame = Frame(width=600, height=400, bg="#4c5670")
 length_frame= Frame(width=600, height=400, bg="#4c5670")
 weight_frame = Frame(width=600, height=400, bg="#4c5670")
 gui_ver_frame = Frame(width=600, height=400, bg="#b3b8c7")
-dev_info_frame = Frame(width=600, height=400, bg="#b3b8c7")
+dev_info_frame = Frame(width=600, height=400, bg="#262e42")
 
 
 window.minsize(width=600, height=400)  # minsize method
 window.title("Convertor GUI Program")  # title method
-
-
-
-
 
 
 window.mainloop()    # for holding window
